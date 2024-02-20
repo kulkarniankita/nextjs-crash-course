@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,7 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <header className="py-4 px-12 flex justify-between">
-          <h1>Easy Sell 💸</h1>
+          <Link href="/">
+            <h1>Easy Sell 💸</h1>
+          </Link>
           <button>Upload</button>
         </header>
         <hr className="h-1 bg-purple-300 border-0 dark:bg-gray-700"></hr>
