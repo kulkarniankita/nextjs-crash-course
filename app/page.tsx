@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default async function Home() {
   const response = await fetch(
-    'https://65d506e73f1ab8c634367630.mockapi.io/products'
+    'https://65d507f83f1ab8c634367939.mockapi.io/products'
   );
   const data = await response.json();
 
@@ -27,15 +27,10 @@ export default async function Home() {
   // ];
   return (
     <main className="min-h-screen">
-      <header className="py-4 px-12 flex justify-between">
-        <h1>Easy Sell 💸</h1>
-        <button>Upload</button>
-      </header>
-      <hr className="h-1 bg-purple-300 border-0 dark:bg-gray-700"></hr>
       <div className="px-12 py-12">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {data.map((item, idx) => (
-            <Card key={`${item.name}-${idx}`} {...item} />
+            <Card id={item.id} key={`${item.name}-${idx}`} {...item} />
           ))}
         </div>
       </div>
