@@ -26,9 +26,31 @@ export default async function Page({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div>
-      My Post: {params.slug}
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+    <div className="px-12 py-12">
+      <div className="flex justify-between mb-6 lg:mb-12">
+        <h2 className="text-2xl lg:text-4xl font-bold">{data.name}</h2>
+        <button className="bg-purple-800 text-white px-4 py-2 rounded-md hidden lg:flex">
+          Contact the Seller!
+        </button>
+      </div>
+      <p className="text-gray-800 font-semibold text-2xl lg:text-4xl my-6">
+        💰 ${data.price}
+      </p>
+      <div className="flex items-center justify-center">
+        <Image
+          className="mb-4 rounded-lg shadow-xl border-4 border-gray-900 p-2"
+          width={800}
+          height={900}
+          alt={data.name}
+          src={data.imageUrl}
+        />
+      </div>
+      <div className="py-12">
+        <p className="text-gray-600 text-lg mb-4">📝 {data.description}</p>
+        <button className="bg-purple-800 text-white px-4 py-2 rounded-md flex lg:hidden w-full items-center justify-center my-12">
+          Contact the Seller!
+        </button>
+      </div>
     </div>
   );
 }
