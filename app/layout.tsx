@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
-import { Nunito } from 'next/font/google';
+import { Nunito, Josefin_Sans } from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
 
 const inter = Nunito({ subsets: ['latin'] });
+const cuteFont = Josefin_Sans({ subsets: ['latin'], weight: '400' });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,16 +19,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className="py-2 px-12 flex justify-between bg-gray-951">
-          <Link href="/">
-            <h1 className="uppercase text-white text-center py-2">Easy Sell</h1>
-          </Link>
-          <Link
-            href="/products/upload"
-            className="uppercase text-gray-953 text-xl py-2"
-          >
-            Upload {'>'}
-          </Link>
+        <header className="py-2  bg-gray-951 ">
+          <div className="max-w-[100rem] px-12 mx-auto flex justify-between">
+            <Link href="/">
+              <h1
+                className={`uppercase text-white text-center py-2 ${cuteFont.className}`}
+              >
+                Easy Sell
+              </h1>
+            </Link>
+            <Link
+              href="/products/upload"
+              className="uppercase text-gray-953 text-xl py-2 hover:text-teal-700"
+            >
+              Upload {'>'}
+            </Link>
+          </div>
         </header>
         <hr className="h-0.5 bg-gray-100 border-0"></hr>
         <div className="bg-gray-950">{children}</div>

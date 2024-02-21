@@ -18,7 +18,9 @@ const UploadFormPage: React.FC = () => {
         <h2 className="text-2xl lg:text-4xl mb-4 uppercase pt-12">
           Sell your Item!
         </h2>
-        <p className="text-xl">You can pay to boost your products here.</p>
+        <p className="text-xl">
+          Enter details in this form to start selling your item.
+        </p>
       </div>
       <div className="mx-auto w-full h-full p-12 rounded-lg border-2 border-gray-500 border-opacity-10 shadow-lg bg-gray-952">
         {state?.type === 'error' && (
@@ -71,6 +73,18 @@ const UploadFormPage: React.FC = () => {
             {state?.errors?.imageUrl && (
               <span id="name-error" className="text-red-600 text-sm">
                 {state.errors.imageUrl.join(',')}
+              </span>
+            )}
+          </div>
+
+          <div className="mb-6">
+            <label htmlFor="description" className="block mb-2">
+              Contact Email
+            </label>
+            <textarea id="contactEmail" name="contactEmail"></textarea>
+            {state?.errors?.contactEmail && (
+              <span id="name-error" className="text-red-600 text-sm">
+                {state.errors.contactEmail.join(',')}
               </span>
             )}
           </div>

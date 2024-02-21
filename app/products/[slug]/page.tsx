@@ -1,5 +1,6 @@
 import { createClient } from '@/supabase/client';
 import Image from 'next/image';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 export const revalidate = 0;
@@ -58,9 +59,12 @@ export default async function Page({ params }: { params: { slug: string } }) {
               📝 {data.description}
             </p>
           </div>
-          <button className="bg-orange-900 hover:bg-orange-950 text-white px-4 py-2  rounded-md flex lg:hidden w-full items-center justify-center my-12">
+          <Link
+            href={`mailto:${data.contactEmail}`}
+            className="bg-orange-900 hover:bg-orange-950 text-white px-4 py-2  rounded-md flex lg:hidden w-full items-center justify-center my-12"
+          >
             Contact the Seller!
-          </button>
+          </Link>
         </div>
       </div>
     </div>

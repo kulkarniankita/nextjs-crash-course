@@ -19,6 +19,7 @@ export async function sellYourItemAction(
     message: string;
     name: string;
     description: string;
+    contactEmail: string;
     imageUrl: string;
     price: number;
   },
@@ -33,6 +34,7 @@ export async function sellYourItemAction(
   const schema = z.object({
     name: z.string().min(6),
     description: z.string().min(10),
+    contactEmail: z.string().min(1).email('This is not a valid email address'),
     price: z.string().min(1),
     imageUrl: z
       .any()
@@ -45,6 +47,7 @@ export async function sellYourItemAction(
   const validatedFields = schema.safeParse({
     name: formData.get('name'),
     description: formData.get('description'),
+    contactEmail: formData.get('contactEmail'),
     price: formData.get('price'),
     imageUrl: formData.get('imageUrl'),
   });
@@ -57,7 +60,8 @@ export async function sellYourItemAction(
     };
   }
 
-  const { name, description, price, imageUrl } = validatedFields.data;
+  const { name, description, price, imageUrl, contactEmail } =
+    validatedFields.data;
 
   try {
     const supabase = createServerActionClient({ cookies });
@@ -75,7 +79,7 @@ export async function sellYourItemAction(
 
       const { data: products } = await supabase
         .from('easysell-products')
-        .insert({ name, description, price, imageUrl: fullPath });
+        .insert({ name, description, price, imageUrl: fullPath, contactEmail });
 
       console.log({ products });
     }

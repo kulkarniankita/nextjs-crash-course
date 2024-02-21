@@ -19,7 +19,7 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <Link href={`/products/${id}`}>
-      <div className="max-w-lg bg-gray-952 rounded-sm overflow-hidden border-2 border-gray-100">
+      <div className="max-w-lg bg-gray-952 rounded-sm overflow-hidden">
         <div className="relative h-96 w-[500px]">
           <Image
             src={`https://qgkywonebrmytdyqmaxb.supabase.co/storage/v1/object/public/storage/${imageUrl}`}
