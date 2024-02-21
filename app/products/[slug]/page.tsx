@@ -10,6 +10,10 @@ export async function generateStaticParams() {
   const supabase = createClient();
   const { data: posts } = await supabase.from('easysell-products').select('id');
 
+  if (!posts) {
+    return [];
+  }
+
   return posts?.map(({ id }) => ({
     slug: id,
   }));
@@ -38,10 +42,10 @@ export default async function Page({ params }: any) {
         </button>
       </div>
 
-      <div className="flex flex-col lg:flex-row gap-4 lg:gap-6">
+      <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 mb-4">
         <div className="flex items-center justify-center">
           <Image
-            className="mb-4 rounded-lg shadow-xl border-4 border-gray-200 p-2 min-w-72 max-w-[500px]"
+            className="rounded-lg shadow-xl border-4 border-gray-200 p-2 lg:min-w-[40rem] lg:min-h-[30rem]"
             width={600}
             height={600}
             alt={data.name}
@@ -54,19 +58,30 @@ export default async function Page({ params }: any) {
             💰 ${data.price}
           </p>
 
-          <div className="pt-6">
-            <label className="font-bold">DESCRIPTION:</label>
-            <p className="text-gray-600 text-lg mb-4 pt-4 pb-6">
-              📝 {data.description}
-            </p>
-          </div>
+          {data.boost && (
+            <>
+              <label className="font-bold">FEATURED:</label>
+              <p className="text-gray-800 font-semibold text-2xl lg:text-3xl pt-4 pb-6 text-center border-b-2 decoration-dotted border-dashed border-gray-800 border-opacity-15">
+                🚀 BOOSTED
+              </p>
+            </>
+          )}
+
           <Link
             href={`mailto:${data.contactEmail}`}
-            className="bg-orange-900 hover:bg-orange-950 text-white px-4 py-2  rounded-md flex lg:hidden w-full items-center justify-center my-12"
+            className="bg-orange-900 hover:bg-orange-950 text-white px-4 py-2 rounded-md flex lg:hidden w-full items-center justify-center my-12"
           >
             Contact the Seller!
           </Link>
         </div>
+      </div>
+      <div className="pt-6">
+        <label className="font-bold pb-2 border-b-2 decoration-dotted border-dashed border-gray-800 border-opacity-15">
+          DESCRIPTION:
+        </label>
+        <p className="text-gray-600 text-lg my-4 pt-4 pb-6 ">
+          📝 {data.description}
+        </p>
       </div>
     </div>
   );

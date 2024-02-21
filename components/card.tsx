@@ -1,4 +1,3 @@
-import { createClient } from '@/supabase/client';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -19,21 +18,23 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <Link href={`/products/${id}`}>
-      <div className="max-w-lg bg-gray-952 rounded-sm overflow-hidden">
-        <div className="relative h-96 w-[500px]">
-          <Image
-            src={`https://qgkywonebrmytdyqmaxb.supabase.co/storage/v1/object/public/storage/${imageUrl}`}
-            alt={name}
-            layout="fill"
-            objectFit="cover"
-            className="rounded-t"
-          />
-        </div>
-        <div className="px-6 py-4">
-          <div className="text-2xl mb-2 uppercase">{name}</div>
-          <p className="text-gray-700 text-base truncate uppercase">
-            {description}
-          </p>
+      <div className="max-w-lg bg-gray-952 rounded-sm overflow-hidden h-full flex flex-col justify-between">
+        <div>
+          <div className="relative h-96 w-[500px] bg-center">
+            <Image
+              src={`https://qgkywonebrmytdyqmaxb.supabase.co/storage/v1/object/public/storage/${imageUrl}`}
+              alt={name}
+              layout="fill"
+              objectFit="cover"
+              className="rounded-t"
+            />
+          </div>
+          <div className="px-6 py-4">
+            <div className="text-2xl mb-2 uppercase">{name}</div>
+            <p className="text-gray-700 text-base truncate uppercase">
+              {description}
+            </p>
+          </div>
         </div>
         <div className="px-6 py-2">
           <span className="inline-block text-2xl text-gray-951 mr-2">

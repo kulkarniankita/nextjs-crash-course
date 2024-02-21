@@ -54,22 +54,29 @@ export async function sellYourItemAction(prevState: any, formData: FormData) {
     validatedFields.data;
 
   try {
+    const fileName = `${Math.random()}-${imageUrl.name}`;
+
     const supabase = createServerActionClient({ cookies });
     const { data, error } = await supabase.storage
       .from('storage')
-      .upload(imageUrl.name, imageUrl, {
+      .upload(fileName, imageUrl, {
         cacheControl: '3600',
         upsert: false,
       });
 
-    if (data) {
-      const fullPath = data.path;
+    if (error) {
+      return {
+        type: 'error',
+        message: 'Database Error: Failed to Upload Image.',
+      };
+    }
 
-      console.log({ data, error, fullPath });
+    if (data) {
+      const path = data.path;
 
       const { data: products } = await supabase
         .from('easysell-products')
-        .insert({ name, description, price, imageUrl: fullPath, contactEmail });
+        .insert({ name, description, price, imageUrl: path, contactEmail });
 
       console.log({ products });
     }
