@@ -28,7 +28,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <div className="px-12 py-12 max-w-7xl mx-auto min-h-screen">
       <div className="flex justify-between mb-6 lg:mb-12">
-        <h2 className="text-2xl lg:text-4xl font-bold items-start">
+        <h2 className="text-3xl lg:text-4xl items-start uppercase">
           {data.name}
         </h2>
         <button className="bg-orange-900 hover:bg-orange-950 text-white px-4 py-2 rounded-md hidden lg:flex">

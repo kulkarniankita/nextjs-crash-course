@@ -13,9 +13,14 @@ const UploadFormPage: React.FC = () => {
   const [state, formAction] = useFormState(sellYourItemAction, initialState);
 
   return (
-    <div className="px-12 py-12 min-h-screen">
-      <h2 className="text-2xl lg:text-4xl font-bold mb-4">Sell your Item!</h2>
-      <div className="max-w-xl mx-auto mt-10 p-12 rounded-lg border-2 border-gray-500 border-opacity-10 shadow-lg bg-gray-952">
+    <div className="px-12 pt-24 pb-12 min-h-screen max-w-[100rem] mx-auto flex gap-56">
+      <div>
+        <h2 className="text-2xl lg:text-4xl mb-4 uppercase pt-12">
+          Sell your Item!
+        </h2>
+        <p className="text-xl">You can pay to boost your products here.</p>
+      </div>
+      <div className="mx-auto w-full h-full p-12 rounded-lg border-2 border-gray-500 border-opacity-10 shadow-lg bg-gray-952">
         {state?.type === 'error' && (
           <p className="text-lg mb-2 bg-gray-953 border-2 border-gray-300 rounded-md p-2 my-4">
             {state.message}
