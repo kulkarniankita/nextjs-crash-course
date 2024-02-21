@@ -10,7 +10,10 @@ const initialState = {
 };
 
 const UploadFormPage: React.FC = () => {
-  const [state, formAction] = useFormState(sellYourItemAction, initialState);
+  const [state, formAction] = useFormState<any>(
+    sellYourItemAction as any,
+    initialState
+  );
 
   return (
     <div className="px-12 pt-24 pb-12 min-h-screen max-w-[100rem] mx-auto flex gap-56">

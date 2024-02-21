@@ -1,15 +1,46 @@
-//@ts-nocheck
 import { createClient } from '@/supabase/client';
+import { getCanonicalUrl } from '@/utils';
+import { Metadata, ResolvingMetadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 export const revalidate = 0;
 
+type Props = {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  const slug = params.slug;
+
+  const supabase = createClient();
+  const { data: post } = await supabase
+    .from('easysell-products')
+    .select()
+    .match({ id: slug })
+    .single();
+
+  if (!post) {
+    return { title: '', description: '' };
+  }
+
+  return {
+    title: post.name || '',
+    description: post.description || '',
+    alternates: {
+      canonical: `${getCanonicalUrl()}/products/${params.slug}`,
+    },
+  };
+}
+
 export async function generateStaticParams() {
   const supabase = createClient();
   const { data: posts } = await supabase.from('easysell-products').select('id');
-
   if (!posts) {
     return [];
   }
@@ -19,7 +50,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Page({ params }: any) {
+export default async function Page({ params }: Props) {
   const supabase = createClient();
   const { data } = await supabase
     .from('easysell-products')
