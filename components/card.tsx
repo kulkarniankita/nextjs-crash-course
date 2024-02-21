@@ -36,7 +36,7 @@ const Card: React.FC<CardProps> = ({
           </p>
         </div>
         <div className="px-6 py-2">
-          <span className="inline-block text-2xl text-gray-950 mr-2">
+          <span className="inline-block text-2xl text-gray-951 mr-2">
             ${price}
           </span>
         </div>
