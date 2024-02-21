@@ -53,18 +53,18 @@ export default async function Page({ params }: any) {
           />
         </div>
         <div className="bg-gray-952 p-6 w-full">
-          <label className="font-bold">PRICE:</label>
-          <p className="text-gray-800 font-semibold text-2xl lg:text-3xl pt-4 pb-6 text-center border-b-2 decoration-dotted border-dashed border-gray-800 border-opacity-15">
-            💰 ${data.price}
+          <label className="font-bold">💰 PRICE:</label>
+          <p className="text-gray-800 text-2xl lg:text-3xl pt-4 py-6 text-center border-b-2 decoration-dotted border-dashed border-gray-800 border-opacity-15">
+            ${data.price}
           </p>
 
           {data.boost && (
-            <>
-              <label className="font-bold">FEATURED:</label>
-              <p className="text-gray-800 font-semibold text-2xl lg:text-3xl pt-4 pb-6 text-center border-b-2 decoration-dotted border-dashed border-gray-800 border-opacity-15">
-                🚀 BOOSTED
+            <div className="pt-4">
+              <label className="font-bold">⭐️ PREMIUM PRODUCT:</label>
+              <p className="text-gray-800 text-2xl lg:text-3xl py-6 text-center border-b-2 decoration-dotted border-dashed border-gray-800 border-opacity-15">
+                Yes
               </p>
-            </>
+            </div>
           )}
 
           <Link
@@ -77,10 +77,10 @@ export default async function Page({ params }: any) {
       </div>
       <div className="pt-6">
         <label className="font-bold pb-2 border-b-2 decoration-dotted border-dashed border-gray-800 border-opacity-15">
-          DESCRIPTION:
+          📝 DESCRIPTION:
         </label>
         <p className="text-gray-600 text-lg my-4 pt-4 pb-6 ">
-          📝 {data.description}
+          {data.description}
         </p>
       </div>
     </div>

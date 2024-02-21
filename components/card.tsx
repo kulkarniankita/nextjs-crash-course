@@ -30,7 +30,7 @@ const Card: React.FC<CardProps> = ({
             />
           </div>
           <div className="px-6 py-4">
-            <div className="text-2xl mb-2 uppercase">{name}</div>
+            <div className="text-2xl mb-2 uppercase line-clamp-2">{name}</div>
             <p className="text-gray-700 text-base truncate uppercase">
               {description}
             </p>
