@@ -14,15 +14,15 @@ const UploadForm: React.FC = () => {
   return (
     <div className="px-12 py-12 ">
       <h2 className="text-2xl lg:text-4xl font-bold mb-4">Sell your Item!</h2>
-      <div className="max-w-md mx-auto mt-10 p-6 rounded-lg border-2 border-gray-500 border-opacity-10 shadow-lg">
+      <div className="max-w-xl mx-auto mt-10 p-12 rounded-lg border-2 border-gray-500 border-opacity-10 shadow-lg bg-gray-952">
         {state?.type === 'error' && (
-          <p className="text-red-700 text-xs mb-2 bg-slate-200 border-2 border-gray-300 rounded-md p-2">
+          <p className="text-lg mb-2 bg-gray-953 border-2 border-gray-300 rounded-md p-2 my-4">
             {state.message}
           </p>
         )}
         <form action={formAction}>
-          <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-600 mb-2">
+          <div className="mb-6">
+            <label htmlFor="name" className="block mb-2">
               Name
             </label>
             <input type="text" id="name" name="name" />
@@ -33,8 +33,8 @@ const UploadForm: React.FC = () => {
             )}
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="price" className="block text-gray-600 mb-2">
+          <div className="mb-6">
+            <label htmlFor="price" className="block mb-2">
               Price
             </label>
             <input type="number" id="price" name="price" />
@@ -45,8 +45,8 @@ const UploadForm: React.FC = () => {
             )}
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="description" className="block text-gray-600 mb-2">
+          <div className="mb-6">
+            <label htmlFor="description" className="block mb-2">
               Description
             </label>
             <textarea id="description" name="description"></textarea>
@@ -57,8 +57,8 @@ const UploadForm: React.FC = () => {
             )}
           </div>
 
-          <div className="mb-4">
-            <label htmlFor="image" className="block text-gray-600 mb-2">
+          <div className="mb-6">
+            <label htmlFor="image" className="block  mb-2">
               Image
             </label>
             <input type="file" accept="image/*" id="imageUrl" name="imageUrl" />
@@ -71,7 +71,7 @@ const UploadForm: React.FC = () => {
 
           <button
             type="submit"
-            className="bg-purple-600 text-white px-4 py-2 rounded-md hover:bg-purple-700"
+            className="bg-orange-900 hover:bg-orange-950 text-white w-full px-6 py-3 rounded-md"
           >
             Submit
           </button>

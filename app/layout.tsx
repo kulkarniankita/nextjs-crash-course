@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Nunito } from 'next/font/google';
 import './globals.css';
 import Link from 'next/link';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Nunito({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,19 +18,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className="py-4 px-12 flex justify-between">
+        <header className="py-2 px-12 flex justify-between bg-gray-951">
           <Link href="/">
-            <h1>Easy Sell 💸</h1>
+            <h1 className="uppercase text-white text-center py-2">Easy Sell</h1>
           </Link>
           <Link
             href="/products/upload"
-            className="bg-indigo-600 text-white hover:bg-indigo-800 rounded-xl px-12 text-xl py-2"
+            className="uppercase text-gray-953 text-xl py-2"
           >
-            Upload
+            Upload {'>'}
           </Link>
         </header>
         <hr className="h-0.5 bg-gray-100 border-0"></hr>
-        {children}
+        <div className="bg-gray-950">{children}</div>
       </body>
     </html>
   );

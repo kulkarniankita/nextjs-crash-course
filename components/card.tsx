@@ -19,8 +19,8 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <Link href={`/products/${id}`}>
-      <div className="max-w-sm rounded-xl overflow-hidden shadow-lg">
-        <div className="relative h-56">
+      <div className="max-w-lg rounded-sm overflow-hidden border-2 border-gray-100">
+        <div className="relative h-96 w-[500px] object-fill">
           <Image
             src={`https://qgkywonebrmytdyqmaxb.supabase.co/storage/v1/object/public/storage/${imageUrl}`}
             alt={name}
@@ -30,11 +30,13 @@ const Card: React.FC<CardProps> = ({
           />
         </div>
         <div className="px-6 py-4">
-          <div className="font-bold text-xl mb-2">{name}</div>
-          <p className="text-gray-700 text-base truncate">{description}</p>
+          <div className=" text-2xl mb-2 uppercase">{name}</div>
+          <p className="text-gray-700 text-base truncate uppercase">
+            {description}
+          </p>
         </div>
-        <div className="px-6 py-4">
-          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+        <div className="px-6 py-2">
+          <span className="inline-block text-2xl text-gray-950 mr-2">
             ${price}
           </span>
         </div>

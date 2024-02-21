@@ -10,14 +10,33 @@ export default async function Home() {
 
   console.log({ products });
 
+  const { data: topProducts } = await supabase
+    .from('easysell-products')
+    .select()
+    .is('boost', true);
+
   if (!products) {
     return notFound();
   }
 
   return (
-    <main className="min-h-screen">
-      <div className="px-12 py-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <main className="min-h-screen max-w-[100rem] mx-auto">
+      <div className="px-12 py-20">
+        <div className="flex gap-40">
+          <div className="pt-12">
+            <h2 className="text-4xl mb-16">OUR TOP PRODUCTS</h2>
+            <p className="text-xl">You can pay to boost your products here.</p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-12">
+            {topProducts &&
+              topProducts.map((item, idx) => (
+                <Card id={item.id} key={`${item.name}-${idx}`} {...item} />
+              ))}
+          </div>
+        </div>
+
+        <h2 className="text-4xl mt-20 mb-16">ALL PRODUCTS</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {products.map((item, idx) => (
             <Card id={item.id} key={`${item.name}-${idx}`} {...item} />
           ))}

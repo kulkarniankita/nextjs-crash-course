@@ -2,7 +2,7 @@ import UploadForm from '@/components/upload-form';
 
 const Page = async () => {
   return (
-    <div className="App">
+    <div className="min-h-screen">
       <UploadForm />
     </div>
   );
