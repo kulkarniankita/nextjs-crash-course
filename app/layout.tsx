@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import { Nunito, Josefin_Sans } from 'next/font/google';
 import './globals.css';
-import Link from 'next/link';
+import Footer from '@/components/footer';
+import Header from '@/components/header';
 
 const inter = Nunito({ subsets: ['latin'] });
 const cuteFont = Josefin_Sans({ subsets: ['latin'], weight: '400' });
@@ -19,25 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header className="py-2  bg-gray-951 ">
-          <div className="max-w-[100rem] px-12 mx-auto flex justify-between">
-            <Link href="/">
-              <h1
-                className={`uppercase text-white text-center py-2 ${cuteFont.className}`}
-              >
-                Easy Sell
-              </h1>
-            </Link>
-            <Link
-              href="/products/upload"
-              className="uppercase text-gray-953 text-xl py-2 hover:text-teal-700"
-            >
-              Upload {'>'}
-            </Link>
-          </div>
-        </header>
+        <Header font={cuteFont.className} />
         <hr className="h-0.5 bg-gray-100 border-0"></hr>
-        <div className="bg-gray-950">{children}</div>
+        <div className="bg-gray-950 py-12">{children}</div>
+        <Footer font={cuteFont.className} />
       </body>
     </html>
   );
