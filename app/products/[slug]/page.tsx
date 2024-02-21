@@ -98,12 +98,12 @@ export default async function Page({ params }: Props) {
             </div>
           )}
 
-          <Link
+          <a
             href={`mailto:${data.contactEmail}`}
             className="bg-orange-900 hover:bg-orange-950 text-white px-4 py-2 rounded-md flex lg:hidden w-full items-center justify-center my-12"
           >
             Contact the Seller!
-          </Link>
+          </a>
         </div>
       </div>
       <div className="pt-6">
