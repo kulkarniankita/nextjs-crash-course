@@ -2,6 +2,7 @@
 
 import { useFormState } from 'react-dom';
 import { sellYourItemAction } from '@/actions';
+import SubmitButton from '@/components/submit-button';
 
 const initialState = {
   message: '',
@@ -12,7 +13,7 @@ const UploadFormPage: React.FC = () => {
   const [state, formAction] = useFormState(sellYourItemAction, initialState);
 
   return (
-    <div className="px-12 py-12 ">
+    <div className="px-12 py-12 min-h-screen">
       <h2 className="text-2xl lg:text-4xl font-bold mb-4">Sell your Item!</h2>
       <div className="max-w-xl mx-auto mt-10 p-12 rounded-lg border-2 border-gray-500 border-opacity-10 shadow-lg bg-gray-952">
         {state?.type === 'error' && (
@@ -69,12 +70,7 @@ const UploadFormPage: React.FC = () => {
             )}
           </div>
 
-          <button
-            type="submit"
-            className="bg-orange-900 hover:bg-orange-950 text-white w-full px-6 py-3 rounded-md"
-          >
-            Submit
-          </button>
+          <SubmitButton />
         </form>
       </div>
     </div>
