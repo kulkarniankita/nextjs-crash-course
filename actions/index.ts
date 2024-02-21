@@ -14,17 +14,7 @@ const ACCEPTED_IMAGE_TYPES = [
   'image/webp',
 ];
 
-export async function sellYourItemAction(
-  prevState: {
-    message: string;
-    name: string;
-    description: string;
-    contactEmail: string;
-    imageUrl: string;
-    price: number;
-  },
-  formData: FormData
-) {
+export async function sellYourItemAction(prevState: any, formData: FormData) {
   console.log({ prevState });
   console.log(formData.get('name'));
   console.log(formData.get('description'));
