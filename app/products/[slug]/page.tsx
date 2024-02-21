@@ -68,9 +68,12 @@ export default async function Page({ params }: Props) {
         <h2 className="text-3xl lg:text-4xl items-start uppercase">
           {data.name}
         </h2>
-        <button className="bg-orange-900 hover:bg-orange-950 text-white px-4 py-2 rounded-md hidden lg:flex">
+        <a
+          href={`mailto:${data.contactEmail}`}
+          className="bg-orange-900 hover:bg-orange-950 text-white px-4 py-2 rounded-md hidden lg:flex"
+        >
           Contact the Seller!
-        </button>
+        </a>
       </div>
 
       <div className="flex flex-col lg:flex-row gap-4 lg:gap-6 mb-4">
