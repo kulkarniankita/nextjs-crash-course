@@ -69,7 +69,7 @@ export default async function Page({ params }: Props) {
           {data.name}
         </h2>
         <a
-          href={`mailto:${data.contactEmail}`}
+          href={`mailto:${data.contactEmail}?subject=Interested in purchasing ${data.name}`}
           className="bg-orange-900 hover:bg-orange-950 text-white px-4 py-2 rounded-md hidden lg:flex"
         >
           Contact the Seller!
