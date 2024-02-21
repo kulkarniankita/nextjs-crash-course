@@ -13,6 +13,17 @@ body {
   button {
     @apply bg-pink-300 px-7 py-2 rounded-xl text-xl shadow-xl shadow-gray-300 hover:bg-pink-500;
   }
+
+  input,
+  textarea {
+    @apply border-2 w-full rounded-lg h-10;
+  }
+
+  header {
+    padding: 16px;
+    border-bottom: 2px solid #333;
+    background: hsl(345, 71%, 90%);
+  }
 }
 
 @layer utilities {

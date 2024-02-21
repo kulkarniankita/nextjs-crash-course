@@ -1,3 +1,4 @@
+import { createClient } from '@/supabase/client';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -21,7 +22,7 @@ const Card: React.FC<CardProps> = ({
       <div className="max-w-sm rounded-xl overflow-hidden shadow-lg">
         <div className="relative h-56">
           <Image
-            src={imageUrl}
+            src={`https://qgkywonebrmytdyqmaxb.supabase.co/storage/v1/object/public/storage/${imageUrl}`}
             alt={name}
             layout="fill"
             objectFit="cover"

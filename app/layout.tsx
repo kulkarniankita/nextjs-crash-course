@@ -22,9 +22,14 @@ export default function RootLayout({
           <Link href="/">
             <h1>Easy Sell 💸</h1>
           </Link>
-          <button>Upload</button>
+          <Link
+            href="/products/upload"
+            className="bg-indigo-600 text-white hover:bg-indigo-800 rounded-xl px-12 text-xl py-2"
+          >
+            Upload
+          </Link>
         </header>
-        <hr className="h-1 bg-purple-300 border-0 dark:bg-gray-700"></hr>
+        <hr className="h-0.5 bg-gray-100 border-0"></hr>
         {children}
       </body>
     </html>
