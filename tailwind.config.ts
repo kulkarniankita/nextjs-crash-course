@@ -10,10 +10,12 @@ const config: Config = {
     extend: {
       colors: {
         gray: {
-          950: '#f4eee5',
-          951: '#222',
-          952: '#E9E4DB',
-          953: '#9CAE96',
+          951: '#f4eee5',
+          952: '#222',
+          953: '#E9E4DB',
+        },
+        green: {
+          951: '#9CAE96',
         },
       },
     },

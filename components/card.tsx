@@ -18,14 +18,16 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <Link href={`/products/${id}`}>
-      <div className="max-w-lg bg-gray-952 rounded-sm overflow-hidden h-full flex flex-col justify-between">
+      <div className="max-w-lg bg-gray-953 rounded-sm overflow-hidden h-full flex flex-col justify-between">
         <div>
-          <div className="relative h-96 w-[500px] bg-center">
+          <div className="relative h-96 bg-center ">
             <Image
               src={`https://qgkywonebrmytdyqmaxb.supabase.co/storage/v1/object/public/storage/${imageUrl}`}
               alt={name}
               layout="fill"
-              objectFit="cover"
+              style={{
+                objectFit: 'cover',
+              }}
               className="rounded-t"
             />
           </div>
@@ -37,7 +39,7 @@ const Card: React.FC<CardProps> = ({
           </div>
         </div>
         <div className="px-6 py-2">
-          <span className="inline-block text-2xl text-gray-951 mr-2">
+          <span className="inline-block text-2xl text-gray-952 mr-2">
             ${price}
           </span>
         </div>

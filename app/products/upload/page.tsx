@@ -25,9 +25,9 @@ const UploadFormPage: React.FC = () => {
           Enter details in this form to start selling your item.
         </p>
       </div>
-      <div className="mx-auto w-full h-full p-12 rounded-lg border-2 border-gray-500 border-opacity-10 shadow-lg bg-gray-952">
+      <div className="mx-auto w-full h-full p-12 rounded-lg border-2 border-gray-500 border-opacity-10 shadow-lg bg-gray-953">
         {state?.type === 'error' && (
-          <p className="text-lg mb-2 bg-gray-953 border-2 border-gray-300 rounded-md p-2 my-4">
+          <p className="text-lg mb-2 bg-green-951 border-2 border-gray-300 rounded-md p-2 my-4">
             {state.message}
           </p>
         )}

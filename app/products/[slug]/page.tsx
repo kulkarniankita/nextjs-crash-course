@@ -86,7 +86,7 @@ export default async function Page({ params }: Props) {
             src={`https://qgkywonebrmytdyqmaxb.supabase.co/storage/v1/object/public/storage/${data.imageUrl}`}
           />
         </div>
-        <div className="bg-gray-952 p-6 w-full">
+        <div className="bg-gray-953 p-6 w-full">
           <label className="font-bold">💰 PRICE:</label>
           <p className="text-gray-800 text-2xl lg:text-3xl pt-4 py-6 text-center border-b-2 decoration-dotted border-dashed border-gray-800 border-opacity-15">
             ${data.price}

@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-}
-
 @layer base {
   h1 {
     @apply text-2xl m-0 p-0;
@@ -15,11 +12,11 @@ body {
   }
 
   input {
-    @apply border-2 w-full rounded-lg h-12 outline-dashed outline-gray-953;
+    @apply border-2 w-full rounded-lg h-12 outline-dashed outline-green-951;
   }
 
   textarea {
-    @apply border-2 w-full rounded-lg h-16 outline-dashed outline-gray-953;
+    @apply border-2 w-full rounded-lg h-16 outline-dashed outline-green-951;
   }
 
   header {
@@ -29,7 +26,7 @@ body {
   }
 
   label {
-    @apply text-2xl text-gray-951;
+    @apply text-2xl text-gray-952;
   }
 }
 
