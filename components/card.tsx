@@ -28,7 +28,6 @@ const Card: React.FC<CardProps> = ({
               style={{
                 objectFit: 'cover',
               }}
-              className="rounded-t"
             />
           </div>
           <div className="px-6 py-4">
