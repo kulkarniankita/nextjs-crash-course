@@ -1,3 +1,4 @@
+import { getImageUrl } from '@/utils';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -22,7 +23,7 @@ const Card: React.FC<CardProps> = ({
         <div>
           <div className="relative h-96 bg-center ">
             <Image
-              src={`https://qgkywonebrmytdyqmaxb.supabase.co/storage/v1/object/public/storage/${imageUrl}`}
+              src={getImageUrl(imageUrl)}
               alt={name}
               layout="fill"
               style={{

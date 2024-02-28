@@ -1,5 +1,5 @@
 import { createClient } from '@/supabase/client';
-import { getCanonicalUrl } from '@/utils';
+import { getCanonicalUrl, getImageUrl } from '@/utils';
 import { Metadata, ResolvingMetadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -32,6 +32,9 @@ export async function generateMetadata(
   return {
     title: post.name || '',
     description: post.description || '',
+    openGraph: {
+      images: [getImageUrl(post.imageUrl)],
+    },
     alternates: {
       canonical: `${getCanonicalUrl()}/products/${params.slug}`,
     },
@@ -83,7 +86,7 @@ export default async function Page({ params }: Props) {
             width={600}
             height={600}
             alt={data.name}
-            src={`https://qgkywonebrmytdyqmaxb.supabase.co/storage/v1/object/public/storage/${data.imageUrl}`}
+            src={getImageUrl(data.imageUrl)}
           />
         </div>
         <div className="bg-gray-953 p-6 w-full">
