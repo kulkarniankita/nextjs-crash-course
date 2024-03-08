@@ -1,7 +1,17 @@
 ## Getting Started
 
-First, run the development server:
+To clone this repo and make changes, [first create a fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) which will create a copy of this repo in your Github Repositories and then you can clone that and make any changes you like. Once you create a fork, you can do the following to get started,
 
+Install the Dependencies using NPM or Yarn:
+```bash
+npm install
+```
+```bash
+yarn install
+```
+
+
+Then, run the development server:
 ```bash
 npm run dev
 # or
@@ -12,9 +22,11 @@ pnpm dev
 bun dev
 ```
 
+You're ready to go!
+
 ## 🚀 Download Next.js Visuals Cheatsheet
 
-If you are interested in getting the visual cheatsheet with all the visuals and links I've shared in this 🎥 [Crash Course](https://youtu.be/L7-CQpa2JFU) then [grab them here for free](https://bit.ly/nextjs-visual-cheatsheet)!
+I highly recommend you download the the visual cheatsheets with all the visuals and over 150 links I've shared in this 🎥 [Crash Course](https://youtu.be/L7-CQpa2JFU). You can [grab them here for free](https://bit.ly/nextjs-visual-cheatsheet)!
 
 ## Start the Project
 
